@@ -1,37 +1,32 @@
-from requests import post
 from pymongo import MongoClient
+from requests import post
 
-client = MongoClient(API) #需要数据库地址
+client = MongoClient(API_mongoDB) #数据库地址
 db = client['chatLog']
 users = db['usercontacts']
 
-for user in users.find():
-    userPhone = user['userPhone']
-    userContacts = user['userContacts']
-    contactSex = []
+for user in users.find():  # 遍历usercontacts文档，每次输出一个用户
+    userPhone = user['userPhone']  #提取用户手机号
+    userContacts = user['userContacts'] #提取userContacts中的信息，然后解析
+    contactCity = []
     try:
-        for i in range(len(userContacts)):
-            if 'contactSex' in userContacts[i].keys():
-                x = userContacts[i]['contactSex']
-                if x == 0:
-                    x = '未知'
-                elif x == 1:
-                    x = '男'
-                elif x == 2:
-                    x = '女'
-                else:
-                    pass
-                contactSex.append(x)
-            else:
-                pass
+	    for i in range(len(userContacts)):  # 遍历userContacts中全部的值
+	        if 'contactCity' in userContacts[i].keys():  # 判断userContacts[x]中是否有'contactCity'键
+	            x = userContacts[i]['contactCity']
+	            if x != '': # 去除''的情况
+	                contactCity.append(x)
+	            else:
+	                pass
+	        else:
+	            pass
     except:
         pass
 
     countList = []
     countStr = ''
-    countSex = set(contactSex)
-    for i in countSex:
-        countList.append("%s=%d" % (i, contactSex.count(i)))
+    countCity = set(contactCity)  # 统计城市的数量，并构造适合的响应格式
+    for i in countCity:
+        countList.append("%s=%d" % (i, contactCity.count(i)))  # 构造 城市=数量 的列表
     countStr = '|'.join(countList)
 
     d = {
@@ -39,6 +34,6 @@ for user in users.find():
         'list': countStr
     }
 
-    url = API_mobile #提交城市数量统计的接口
-    r = post(url, data=d)
-    print(userPhone,':',r.content)
+    url = API_City #城市数量统计的接口
+    r = post(url,data=d)
+    print(userPhone, ':', r.content)

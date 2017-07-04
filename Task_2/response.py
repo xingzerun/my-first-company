@@ -1,3 +1,5 @@
+# 网络上参考的response范例，由于修改已经不可运行，但具有参考价值
+
 from urllib import request, parse
 
 req = request.Request(

@@ -1,3 +1,4 @@
+# 基于selenium，但是只能翻到第二页，就会报错
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By

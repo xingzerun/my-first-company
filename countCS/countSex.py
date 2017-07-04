@@ -1,7 +1,7 @@
 from requests import post
 from pymongo import MongoClient
 
-client = MongoClient(API) #需要数据库地址
+client = MongoClient(API_mongoDB) #需要数据库地址
 db = client['chatLog']
 users = db['usercontacts']
 
@@ -39,6 +39,6 @@ for user in users.find():
         'list': countStr
     }
 
-    url = API_mobile #提交性别统计的接口
+    url = API_Sex #性别统计的接口
     r = post(url, data=d)
     print(userPhone,':',r.content)

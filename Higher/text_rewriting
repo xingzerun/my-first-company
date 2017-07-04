@@ -1,0 +1,11 @@
+# 通过计数循环方法。从一个文本文件中指定抽取多少行到多少行，写入到另一个文本文件中
+
+i = 1
+
+with open('input.txt', 'r') as f1, open('out.txt', 'w') as f2:
+	for line in f1:
+		if 1 <= i <=5:
+			f2.write(line)
+		i+=1
+		if i > 40:
+			break

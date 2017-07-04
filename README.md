@@ -1,2 +1,2 @@
 # My first company
-The is the work I did in my first company.I love these jobs.
+The is the what I did in my first company.I appreciate all the work and thank you for giving me the job.

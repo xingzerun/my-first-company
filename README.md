@@ -1,2 +1,2 @@
-# myCompany
+# My first job
 The is the work I did in my first company. I love these jobs.

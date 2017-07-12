@@ -36,6 +36,7 @@ def content_one_message(html):
 
 #解析某一个手机号的聊天内容
 def parse_one_message(message):
+    jieba.add_word('邦盈网络')
     # 统计词频
     words = jieba.cut(message,cut_all=False) # 精确模式
     word_freq = {}
@@ -49,7 +50,7 @@ def parse_one_message(message):
     # 排序且只保留中文word
     freq_word = []
     for word,freq in word_freq.items():
-        if word >= u'\u4e00' and word <= u'\u9fa5':
+        if word >= u'\u4e00' and word <= u'\u9fa5' and len(word)>2:
             freq_word.append((word,freq))
     freq_word.sort(key=lambda x:x[1],reverse=True)
 

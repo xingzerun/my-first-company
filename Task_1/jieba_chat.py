@@ -55,7 +55,7 @@ def parse_one_message(message):
 
     # 汇总前二十名的词频
     ls = ''
-    for word0,freq in freq_word[:14]:
+    for word,freq in freq_word[:14]:
         ls = ls + word + '=' + str(freq) + '|'
 
     ls = ls[:-1]

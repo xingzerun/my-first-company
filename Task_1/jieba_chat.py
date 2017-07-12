@@ -5,6 +5,12 @@ import json
 import jieba.analyse
 from requests.exceptions import RequestException
 
+API = 'http://0.0.0.0'
+
+API_Data = API + '/index.php/indexCx/getMobileo' #获取数据的接口
+API_Mobile = API + '/index.php/indexCx/mlist/mobile/' #获取手机号的接口
+API_KeyWork = API + '/index.php/indexCx/setKeyWordList/' #提交词频的统计结果的对应于手机号的接口
+
 #获取某一个网页
 def get_one_page(url):
     try:
@@ -64,7 +70,7 @@ def parse_one_message(message):
 #             return v
 
 def main():
-    response = requests.get(API_data) #获取数据的接口
+    response = requests.get(API_Data) #获取数据的接口
     # mobile_html = get_one_page(mobileURL) # 获取手机号码网页
     # mobile = get_one_mobile(mobile_html) # 获取某一个手机号码
     # print(mobile)
@@ -72,7 +78,7 @@ def main():
     datas = json.loads(html_0)
     for data in datas:
         for v in data.values():  # v为遍历过程输出的某一个手机号 
-            url = API_mobile + v # 单个手机号的所有信息 #提交手机号的接口
+            url = API_Mobile + v # 单个手机号的所有信息 #获取手机号的接口
             # print(url)
             html_1 = get_one_page(url) # 获取网页内容
             # print(html_1)

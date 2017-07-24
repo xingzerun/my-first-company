@@ -5,7 +5,7 @@ import json
 import jieba.analyse
 from requests.exceptions import RequestException
 
-API = 'http://47.92.116.145'
+API = 'http://0.0.0.0'
 
 API_Data = API + '/index.php/indexCx/getMobileo' #获取数据的接口
 API_Mobile = API + '/index.php/indexCx/mlist/mobile/' #获取手机号的接口

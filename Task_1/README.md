@@ -28,3 +28,5 @@ WordCloud：https://amueller.github.io/word_cloud/index.html
 ## jieba中可能可以用来禁用词的方法
  jieba.analyse.ChineseAnalyzer有停用词的处理（https://github.com/fxsjy/jieba/issues/77）：https://github.com/fxsjy/jieba/blob/master/jieba/analyse/analyzer.py  
  ‘你是说stopwords？ 现在还没有提供接口，你可以先试一试效果’（https://github.com/fxsjy/jieba/issues/54）：https://github.com/fxsjy/jieba/blob/master/test/extract_tags.py
+## stop_word demo
+extract_tags：https://github.com/fxsjy/jieba/blob/master/test/extract_tags_stop_words.py

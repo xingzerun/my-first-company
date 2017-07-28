@@ -42,7 +42,7 @@ extract_tags：https://github.com/fxsjy/jieba/blob/master/test/extract_tags_stop
 * 自己写一个文件，把stopwords一个一个的排除。
 	* https://github.com/FantasRu/WordCloud/blob/master/main.py
 	* https://github.com/fyuanfen/wordcloud/blob/master/word.py
-* 该源码！？经过试验，修改作者https://github.com/xingzerun/word_cloud/blob/master/examples/masked.py中的
+* 改源码！？经过试验，修改作者https://github.com/xingzerun/word_cloud/blob/master/examples/masked.py中的
 
 		-text = open(path.join(d, 'alice.txt')).read()  
 		+text = open(path.join(d, 'alice.txt')，encoding='utf-8').read()

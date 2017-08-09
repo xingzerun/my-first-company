@@ -2,12 +2,12 @@ from pymongo import MongoClient
 from datetime import datetime
 from requests import post
 
-MONGO_URL = 'mongodb://192.168.0.210:27017/'
+MONGO_URL = 'mongodb://0.0.0.0:27017/'
 MONGO_DB = 'chatLog'
 MONGO_Collections = 'usercontacts'
 
 # 存储地址
-URL = 'http://192.168.0.210/IndexCx/setFriendCounts/'
+URL = 'http://0.0.0.0/IndexCx/setFriendCounts/'
 
 # Making a Connection with MongoClient
 client = MongoClient(MONGO_URL)

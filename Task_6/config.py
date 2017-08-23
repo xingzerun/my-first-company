@@ -1,5 +1,5 @@
 # 接口URL
-URL = 'http://192.168.0.210'
+URL = 'http://000.000.0.000'
 
 # MongoDB URL
-MONGO_URL = 'mongodb://192.168.0.210:27017/'
+MONGO_URL = 'mongodb://000.000.0.000:27017/'

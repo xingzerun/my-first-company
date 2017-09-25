@@ -6,7 +6,7 @@ from datetime import datetime
 import json
 
 City_URL = URL + '/index.php/indexCx/setCityList/'
-# MONGO_URL = 'mongodb://192.168.0.210:27017/'
+# MONGO_URL = 'mongodb://0.0.0.0:27017/'
 MONGO_DB = 'chatLog'
 MONGO_Collections = 'usercontacts'
 

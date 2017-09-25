@@ -4,7 +4,7 @@ from requests import post
 from config import *
 import json
 
-# MONGO_URL = 'mongodb://192.168.0.210:27017/'
+# MONGO_URL = 'mongodb://0.0.0.0:27017/'
 MONGO_DB = 'chatLog'
 MONGO_Collections = 'usercontacts'
 # 返回数据接口
